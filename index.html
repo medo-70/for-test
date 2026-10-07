@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموقع الشخصي | Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        darkBg: '#0F172A',
+                        cardDark: '#1E293B'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-darkBg dark:text-gray-100 transition-colors duration-300">
+
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                    معرض أعمالي
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 space-x-reverse items-center font-semibold">
+                    <a href="#home" class="hover:text-primary transition-colors">الرئيسية</a>
+                    <a href="#about" class="hover:text-primary transition-colors">عنّي</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">المهارات</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">المشاريع</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">اتصل بي</a>
+                </nav>
+
+                <!-- Action Controls -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button id="themeToggle" aria-label="تبديل الثيم" class="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-yellow-400 hover:opacity-80 transition-opacity">
+                        <i id="themeIcon" class="fas font-solid fa-moon text-xl"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="القائمة" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-cardDark border-b border-gray-200 dark:border-gray-800 px-4 pt-2 pb-4 space-y-3">
+            <a href="#home" class="block py-2 hover:text-primary transition-colors">الرئيسية</a>
+            <a href="#about" class="block py-2 hover:text-primary transition-colors">عنّي</a>
+            <a href="#skills" class="block py-2 hover:text-primary transition-colors">المهارات</a>
+            <a href="#projects" class="block py-2 hover:text-primary transition-colors">المشاريع</a>
+            <a href="#contact" class="block py-2 hover:text-primary transition-colors">اتصل بي</a>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="text-center max-w-3xl mx-auto z-10">
+            <div class="mb-6 relative inline-block">
+                <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=موقعي" alt="صورة شخصية" class="w-36 h-36 rounded-full mx-auto shadow-2xl border-4 border-primary object-cover">
+                <span class="absolute bottom-2 right-2 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full"></span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 tracking-tight">
+                أهلاً بك، أنا <span class="bg-gradient-to-r from-blue-500 to-emerald-400 bg-clip-text text-transparent">مطور برمجيات</span>
+            </h1>
+            
+            <p class="text-xl sm:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-8 h-8">
+                أنا متخصص في <span id="typingElement" class="text-primary font-bold typing-cursor"></span>
+            </p>
+
+            <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
+                أعمل على تصميم وتطوير تطبيقات ومواقع ويب حديثة وسريعة باستخدام أحدث التقنيات وأفضل الممارسات.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 rounded-full bg-primary text-white font-semibold hover:bg-blue-600 shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                    استعرض أعمالي
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-full bg-gray-200 dark:bg-cardDark text-gray-800 dark:text-white font-semibold hover:bg-gray-300 dark:hover:bg-gray-700 transition-all transform hover:-translate-y-1">
+                    تواصل معي
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white dark:bg-cardDark/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">عنّي</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">شغوف بابتكار الحلول البرمجية الحديثة</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        لدي خبرة عميقة في تطوير واجهات المستخدم وتطبيقات الويب المتكاملة. أسعى دائمًا لتقديم تجربة مستخدم سلسة وتصاميم عصرية مع كتابة كود نظيف وقابل للتطوير.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-gray-50 dark:bg-cardDark rounded-xl border border-gray-100 dark:border-gray-800">
+                            <i class="fas fa-code text-2xl text-primary mb-2"></i>
+                            <h4 class="font-bold">مشاريع مكتملة</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">+25 مشروع</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 dark:bg-cardDark rounded-xl border border-gray-100 dark:border-gray-800">
+                            <i class="fas fa-users text-2xl text-secondary mb-2"></i>
+                            <h4 class="font-bold">عملاء سعداء</h4>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">+15 عميل</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-gradient-to-tr from-blue-500 to-emerald-400 p-1 rounded-2xl shadow-xl">
+                    <div class="bg-white dark:bg-cardDark p-6 rounded-2xl">
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-emerald-500 text-xl"></i>
+                                <span>تطوير واجهات المستخدم (Frontend Development)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-emerald-500 text-xl"></i>
+                                <span>تطوير الأنظمة الخلفية (Backend APIs)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-emerald-500 text-xl"></i>
+                                <span>تصميم تجربة وواجهة المستخدم (UI/UX)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-emerald-500 text-xl"></i>
+                                <span>تحسين أداء واستجابة المواقع</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">المهارات التقنية</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Skill Items -->
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-html5 text-5xl text-orange-500 mb-3"></i>
+                    <h3 class="font-semibold">HTML5</h3>
+                </div>
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-css3-alt text-5xl text-blue-500 mb-3"></i>
+                    <h3 class="font-semibold">CSS3</h3>
+                </div>
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-js text-5xl text-yellow-400 mb-3"></i>
+                    <h3 class="font-semibold">JavaScript</h3>
+                </div>
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-react text-5xl text-cyan-400 mb-3"></i>
+                    <h3 class="font-semibold">React.js</h3>
+                </div>
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-node-js text-5xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold">Node.js</h3>
+                </div>
+                <div class="p-6 bg-white dark:bg-cardDark rounded-2xl text-center border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <i class="fab fa-git-alt text-5xl text-red-500 mb-3"></i>
+                    <h3 class="font-semibold">Git & GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white dark:bg-cardDark/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">أحدث المشاريع</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-50 dark:bg-cardDark rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all flex flex-col">
+                    <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=مشروع+1" alt="مشروع 1" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">منصة تجارة إلكترونية</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">متجر إلكتروني متكامل يحتوي على سلة تسوق ونظام دفع وإدارة منتجات.</p>
+                        </div>
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-primary px-2.5 py-1 rounded-full">React</span>
+                                <span class="text-xs bg-emerald-100 dark:bg-emerald-900/40 text-emerald-500 px-2.5 py-1 rounded-full">Tailwind</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary hover:underline text-sm font-semibold">معاينة <i class="fas fa-external-link-alt text-xs"></i></a>
+                                <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-gray-50 dark:bg-cardDark rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all flex flex-col">
+                    <img src="https://placehold.co/600x400/10B981/FFFFFF?text=مشروع+2" alt="مشروع 2" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">تطبيق إدارة المهام</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">تطبيق لإدارة المهام اليومية مع دعم حفظ البيانات محلياً وإشعارات للتذكير.</p>
+                        </div>
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-yellow-100 dark:bg-yellow-900/40 text-yellow-600 px-2.5 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-primary px-2.5 py-1 rounded-full">CSS3</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary hover:underline text-sm font-semibold">معاينة <i class="fas fa-external-link-alt text-xs"></i></a>
+                                <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-gray-50 dark:bg-cardDark rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all flex flex-col">
+                    <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=مشروع+3" alt="مشروع 3" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">موقع الطقس والتنبؤات</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">تطبيق جغرافى يعرض درجات الحرارة والتوقعات الجوية بالاتصال بـ Weather API.</p>
+                        </div>
+                        <div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-500 px-2.5 py-1 rounded-full">API Integration</span>
+                                <span class="text-xs bg-blue-100 dark:bg-blue-900/40 text-primary px-2.5 py-1 rounded-full">React</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary hover:underline text-sm font-semibold">معاينة <i class="fas fa-external-link-alt text-xs"></i></a>
+                                <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">تواصل معي</h2>
+                <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-white dark:bg-cardDark rounded-2xl p-8 border border-gray-100 dark:border-gray-800 shadow-xl">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">الاسم</label>
+                            <input type="text" required placeholder="اسمك الكريم" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">البريد الإلكتروني</label>
+                            <input type="email" required placeholder="example@mail.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-primary transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">الرسالة</label>
+                        <textarea rows="4" required placeholder="اكتب رسالتك هنا..." class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darkBg focus:outline-none focus:ring-2 focus:ring-primary transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                        إرسال الرسالة
+                    </button>
+                </form>
+                <div id="formNotification" class="hidden mt-4 p-4 rounded-xl text-center font-semibold"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-darkBg border-t border-gray-200 dark:border-gray-800 py-8 text-center text-gray-500 dark:text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 جميع الحقوق محفوظة.</p>
+            <div class="flex space-x-6 space-x-reverse text-xl">
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Typing Effect Logic
+        const words = ["تطوير واجهات الويب", "تطوير تطبيقات JavaScript", "تصميم تجربة المستخدم"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingElement');
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', typeEffect);
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const notification = document.getElementById('formNotification');
+            notification.textContent = 'شكرًا لتواصلك! تم إرسال رسالتك بنجاح.';
+            notification.className = 'mt-4 p-4 rounded-xl text-center font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200 block';
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                notification.className = 'hidden';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
